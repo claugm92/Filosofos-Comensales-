@@ -1,10 +1,3 @@
-﻿/*
-Quote from 
-
-C# and the .NET Framework
-by Bob Powell 
-
-*/
 using System;
 using System.Threading;
 
