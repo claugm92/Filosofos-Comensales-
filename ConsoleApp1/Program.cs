@@ -48,7 +48,7 @@ public class Philosopher : WorkerThread
             //Resta la cantidad a comer 
             pd.TotalFood -= pd.CantidadAComer;
 
-            Console.WriteLine("Filosofo {0} esta comiento {1} de sus {2} de comida", pd.IdFilosofo, pd.CantidadAComer, pd.TotalFood);
+            Console.WriteLine("Filosofo {0} esta comiendo {1} de sus {2} de comida", pd.IdFilosofo, pd.CantidadAComer, pd.TotalFood);
 
             //lo pone a comer en un tiempo random entre 1 y 5 segundos
             Thread.Sleep(r.Next(1000, 5000));
@@ -58,7 +58,7 @@ public class Philosopher : WorkerThread
             {
                 pd.PalilloDerecho.ReleaseMutex();
                 pd.PalilloIzquierdo.ReleaseMutex();
-                Console.WriteLine("Filosofo {0} esta pensando", pd.IdFilosofo);
+                
 
             }
             catch(Exception ex)
@@ -67,9 +67,10 @@ public class Philosopher : WorkerThread
             }
 
 
-
+            
             //Pone a pensar el filosofo durante un tiempo aleatorio entre 1 y 5 segundos
             Thread.Sleep(r.Next(1000, 5000));
+            Console.WriteLine("Filosofo {0} esta pensando", pd.IdFilosofo);
         }
         //como ya no tiene comida el filoso termino de comer
         Console.WriteLine("Filosofo {0} termino su comida", pd.IdFilosofo);
